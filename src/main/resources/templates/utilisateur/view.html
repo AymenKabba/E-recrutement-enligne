@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template1">
+<head>
+  <meta charset="UTF-8">
+  <title>Détails de l'Utilisateur</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1">
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Détails de l'Utilisateur</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>ID:</strong> <span th:text="${utilisateur.id}"></span></p>
+          <p><strong>Nom:</strong> <span th:text="${utilisateur.nom}"></span></p>
+          <p><strong>Prénom:</strong> <span th:text="${utilisateur.prenom}"></span></p>
+          <p><strong>Email:</strong> <span th:text="${utilisateur.email}"></span></p>
+          <p><strong>Rôle:</strong> <span th:text="${utilisateur.role}"></span></p>
+        </div>
+      </div>
+      <div class="mt-3">
+        <a th:href="@{/utilisateurs}" class="btn btn-secondary">Retour à la liste</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
